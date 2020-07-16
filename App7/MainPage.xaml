@@ -6,19 +6,61 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <ContentPage.Content>
+        <Frame BackgroundColor="#2C2350" HasShadow="True">
+            <StackLayout>
+                <StackLayout HeightRequest="50" Orientation="Horizontal">
+                    <Label
+                        x:Name="Option"
+                        HorizontalOptions="StartAndExpand"
+                        Text="Today"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        <Label Text="Hi"/>
-        <!--  Place new controls here  -->
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to Xamarin.Forms!"
-            VerticalOptions="CenterAndExpand" />
-        <Label Text="Try new" />
-    </StackLayout>
+                    <Image
+                        x:Name="Downarrow"
+                        Margin="20"
+                        HeightRequest="10"
+                        HorizontalOptions="End"
+                        Source="Is_dropdown.png"
+                        VerticalOptions="Center" />
 
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="choose" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout
+                    x:Name="stack"
+                    IsVisible="False"
+                    Spacing="10">
+                    <StackLayout>
+                        <Label HorizontalOptions="StartAndExpand" Text="Today" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="tdy" />
+                        </StackLayout.GestureRecognizers>
+
+                    </StackLayout>
+                    <StackLayout>
+                        <Label HorizontalOptions="StartAndExpand" Text="Tomorrow" />
+
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Tomorrow" />
+                        </StackLayout.GestureRecognizers>
+
+                    </StackLayout>
+                    <StackLayout>
+                        <Label HorizontalOptions="StartAndExpand" Text="Yesterday" />
+
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Past" />
+                        </StackLayout.GestureRecognizers>
+
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+        </Frame>
+    </ContentPage.Content>
 </ContentPage>

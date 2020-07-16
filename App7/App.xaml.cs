@@ -1,6 +1,8 @@
-﻿using System;
+﻿
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using App7;
 
 namespace App7
 {
@@ -10,7 +12,7 @@ namespace App7
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new ShellPage();
         }
 
         protected override void OnStart()
